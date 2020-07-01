@@ -19,5 +19,13 @@ function Person() {
   }
 }
 
-const person = new Person();
-person.greet();
+Person.prototype = {
+  printAge() {
+    console.log(this.age);
+  }
+};
+
+const p = new Person();
+p.greet();
+p.printAge();
+console.log(p.__proto__);
